@@ -59,7 +59,7 @@ runs:
         echo "::set-output name=cache-restore-keys::$cache_restore_keys"
 
     - name: Cache Yarn packages
-      uses: actions/cache@v3.0.3
+      uses: actions/cache@v3.0.4
       id: cache
       with:
         key: ${{ steps.yarn.outputs.cache-key }}
