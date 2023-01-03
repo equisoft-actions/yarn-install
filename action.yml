@@ -53,10 +53,10 @@ runs:
         cache_restore_keys="$cache_key-"
         cache_key="$cache_key-${{ hashFiles(format('{0}/yarn.lock', env.working-directory)) }}"
 
-        echo "::set-output name=version::$version"
-        echo "::set-output name=cache-dir::$cache_dir"
-        echo "::set-output name=cache-key::$cache_key"
-        echo "::set-output name=cache-restore-keys::$cache_restore_keys"
+        echo "version=$version" >> $GITHUB_OUTPUT
+        echo "cache-dir=$cache_dir" >> $GITHUB_OUTPUT
+        echo "cache-key=$cache_key" >> $GITHUB_OUTPUT
+        echo "cache-restore-keys=$cache_restore_keys" >> $GITHUB_OUTPUT
 
     - name: Cache Yarn packages
       uses: actions/cache@v3
