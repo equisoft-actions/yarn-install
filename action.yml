@@ -59,7 +59,7 @@ runs:
         echo "cache-restore-keys=$cache_restore_keys" >> $GITHUB_OUTPUT
 
     - name: Cache Yarn packages
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       id: cache
       with:
         key: ${{ steps.yarn.outputs.cache-key }}
