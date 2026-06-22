@@ -30,6 +30,9 @@ outputs:
 runs:
   using: composite
   steps:
+    - name: Setup Yarn config
+      uses: equisoft-actions/yarn-config@v1
+
     - name: Lookup Yarn version
       id: yarn
       working-directory: ${{ inputs.working-directory }}
